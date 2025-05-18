@@ -1,4 +1,5 @@
 # 🤖 File QA RAG Chatbot App
+A multi-modal visual QnA app using Google Gemini Pro and Streamlit.
 
 [![Streamlit App](https://static.streamlit.io/badges/streamlit_badge_black_white.svg)](https://your-app-name.streamlit.app)
 
