@@ -4,6 +4,7 @@ import os
 import pandas as pd
 from langchain_openai import ChatOpenAI
 from langchain.document_loaders import PyPDFLoader
+from langchain_community.document_loaders.parsers.pdf import PDFMinerParser
 from langchain.embeddings import OpenAIEmbeddings
 from langchain.chains import RetrievalQA
 from langchain.prompts import ChatPromptTemplate
@@ -26,12 +27,18 @@ def configure_retriever(uploaded_files):
         with open(temp_path, 'wb') as f:
             f.write(uploaded_file.getvalue())
 
-        loader = PyPDFLoader(temp_path)
-        loaded_docs = loader.load()
-        if loaded_docs:
-            docs.extend(loaded_docs)
-        else:
-            print(f"Failed to load {uploaded_file.name}")
+        try:
+            parser = PDFMinerParser()
+            loader = PyPDFLoader(temp_path, parser=parser)
+            print(f"Using parser: {loader.parser.__class__.__name__}")
+            loaded_docs = loader.load()
+            if loaded_docs:
+                docs.extend(loaded_docs)
+            else:
+                st.warning(f"No content extracted from: {uploaded_file.name}")
+        except ImportError as e:
+            st.error(f"❌ PDF parsing failed for {uploaded_file.name}: {e}")
+            continue
 
     embeddings_model = OpenAIEmbeddings()
     print(f"Total number of documents loaded: {len(docs)}")
