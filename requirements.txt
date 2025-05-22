@@ -1,6 +1,7 @@
 streamlit
 pandas
-pyyaml
+pdfminer.six
+pymupdf
 langchain
 langchain-openai
 langchain-community
