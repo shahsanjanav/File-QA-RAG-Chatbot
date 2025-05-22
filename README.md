@@ -1,12 +1,12 @@
 # 🤖 File QA RAG Chatbot App
 A Retrieval-Augmented Generation (RAG) chatbot using OpenAI GPT-3.5 and Streamlit.
 
-[![Streamlit App](https://static.streamlit.io/badges/streamlit_badge_black_white.svg)](https://file-qa-rag-chatbot.streamlit.app)
+[![Streamlit App](https://static.streamlit.io/badges/streamlit_badge_black_white.svg)](https://file-app-rag-chatbot.streamlit.app)
 
 A Streamlit-based Retrieval-Augmented Generation (RAG) chatbot that allows users to upload PDF files and ask context-aware questions using OpenAI GPT-3.5 and LangChain.
 
 ## 🔗 Live App
-👉 [Launch App](https://file-qa-rag-chatbot.streamlit.app)
+👉 [Launch App](https://file-app-rag-chatbot.streamlit.app)
 
 ## 🧠 Features
 - Upload multiple PDF files
