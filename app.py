@@ -1,15 +1,12 @@
 import streamlit as st
 import tempfile
 import os
-import yaml
 import pandas as pd
 from langchain_openai import ChatOpenAI
 from langchain.document_loaders import PyPDFLoader
 from langchain.embeddings import OpenAIEmbeddings
 from langchain.chains import RetrievalQA
 from langchain.prompts import ChatPromptTemplate
-from langchain_community.chat_message_histories import StreamlitChatMessageHistory
-from langchain_core.callbacks.base import BaseCallbackHandler
 from langchain.vectorstores import FAISS
 from langchain.text_splitter import RecursiveCharacterTextSplitter
 
@@ -17,11 +14,7 @@ from langchain.text_splitter import RecursiveCharacterTextSplitter
 st.set_page_config(page_title='File QA RAG Chatbot', page_icon='🤖')
 st.title('Welcome to File QA RAG Chatbot 🤖')
 
-# Prompt for OpenAI API key
-API_KEY = st.sidebar.text_input("Enter your OpenAI API Key", type="password")
-if not API_KEY:
-    st.warning("Please enter your OpenAI API key in the sidebar to continue.")
-    st.stop()
+API_KEY = st.secrets["OPENAI_API_KEY"]
 os.environ['OPENAI_API_KEY'] = API_KEY
 
 def configure_retriever(uploaded_files):
