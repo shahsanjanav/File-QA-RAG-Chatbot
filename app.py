@@ -3,8 +3,7 @@ import tempfile
 import os
 import pandas as pd
 from langchain_openai import ChatOpenAI
-from langchain.document_loaders import PyPDFLoader
-from langchain_community.document_loaders.parsers.pdf import PDFMinerParser
+from langchain_community.document_loaders import PyMuPDFLoader
 from langchain.embeddings import OpenAIEmbeddings
 from langchain.chains import RetrievalQA
 from langchain.prompts import ChatPromptTemplate
@@ -28,15 +27,14 @@ def configure_retriever(uploaded_files):
             f.write(uploaded_file.getvalue())
 
         try:
-            parser = PDFMinerParser()
-            loader = PyPDFLoader(temp_path, parser=parser)
-            print(f"Using parser: {loader.parser.__class__.__name__}")
+            loader = PyMuPDFLoader(temp_path)
             loaded_docs = loader.load()
+            print(f"Loaded with PyMuPDF: {uploaded_file.name}")
             if loaded_docs:
                 docs.extend(loaded_docs)
             else:
                 st.warning(f"No content extracted from: {uploaded_file.name}")
-        except ImportError as e:
+        except Exception as e:
             st.error(f"❌ PDF parsing failed for {uploaded_file.name}: {e}")
             continue
 
