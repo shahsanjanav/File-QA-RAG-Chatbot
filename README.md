@@ -50,5 +50,11 @@ OPENAI_API_KEY = "your-openai-api-key"
 MIT License © 2025 Sanjana Shah
 
 ## 👤 Author
-shahsanjanav  
-*ML/AI Enthusiast*
+
+**Sanjana Shah**  
+✨ Machine Learning & Generative AI Enthusiast  
+📫 [LinkedIn](https://www.linkedin.com/in/sanjanavshah)
+
+---
+
+⭐ If you like this project, consider starring it on GitHub!
