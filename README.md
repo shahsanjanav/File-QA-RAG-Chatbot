@@ -20,6 +20,14 @@ A Streamlit-based Retrieval-Augmented Generation (RAG) chatbot that allows users
 - OpenAI GPT-3.5 Turbo API
 - FAISS (vector similarity search)
 
+## 📸 Screenshots
+
+### 🔹 Upload and Chat Interface
+![Chat UI](./screenshots/screenshot_1.png)
+
+### 🔹 Sample Answer from GPT
+![Response Screenshot](./screenshots/screenshot_2.png)
+
 ## 📦 How to Run Locally
 ```bash
 pip install -r requirements.txt
