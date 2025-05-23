@@ -23,10 +23,10 @@ A Streamlit-based Retrieval-Augmented Generation (RAG) chatbot that allows users
 ## 📸 Screenshots
 
 ### 🔹 Upload and Chat Interface
-   ![Chat UI](./screenshots/screenshot_1.png)
+![Chat UI](./screenshots/File QA RAG Chatbot_1.png)
 
 ### 🔹 Sample Answer from GPT
-   ![Response Screenshot](./screenshots/screenshot_2.png)
+![Response Screenshot](./screenshots/File QA RAG Chatbot_2.png)
 
 ## 📦 How to Run Locally
 ```bash
